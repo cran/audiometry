@@ -1,0 +1,11 @@
+b2be7c726697f1cd6de0b99f71024d27 *DESCRIPTION
+df1b8c9cf60aaab52ed85342f0cdec4e *NAMESPACE
+68afa953fcd7d602865074ccc8c63683 *R/audiometry.R
+8c3c65a5923bde8ffcafc491153c0dc3 *R/gg_pta.R
+89591443226b47b3859305f1e291b8e9 *build/vignette.rds
+dea6c87158673257e6a8a931d6cf59ec *inst/doc/Intro_to_PTA_Standards.R
+dac0624d01ff8c2bee0b698fe43dbcfa *inst/doc/Intro_to_PTA_Standards.Rmd
+26d90b6d3e2cc6378ff1a446894af8b2 *inst/doc/Intro_to_PTA_Standards.html
+ffd6c8000ea5ab287c22a082245113c8 *man/audiometry.Rd
+658fe5d58d53fc25ad4329d5bde78457 *man/gg_pta.Rd
+dac0624d01ff8c2bee0b698fe43dbcfa *vignettes/Intro_to_PTA_Standards.Rmd
