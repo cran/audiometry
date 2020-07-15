@@ -154,7 +154,7 @@ gg_pta(data.frame(0)) +
 
 ### Finally
 
-The package name *audiometry* is obviously much wider then just pure tone audiogram forms. I intend to broaden the package's functionality *slowly* over time. 
+The package name *audiometry* is obviously much wider then just pure tone audiogram forms.  I intend to broaden the package's functionality *slowly* over time. As of now the *audiometry* packages has support for the Freiburger Sprachtest which is a widely used speech audiometry test in German speaking countries.
 
 
 

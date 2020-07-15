@@ -59,7 +59,7 @@ library(ggplot2)
 #'              geom_boxplot(aes(x=x, y=y, group=x)) +
 #'              theme_grey()
 #' print(fig3)
-gg_pta <- function(data,
+gg_pta <- function(data = data.frame(),
                    theme = theme_light,
                    lettermark = NULL,
                    lettermarksize = 30,

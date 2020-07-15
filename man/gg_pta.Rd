@@ -5,7 +5,7 @@
 \title{Make a primer for pure tone audiograms with ggplot2}
 \usage{
 gg_pta(
-  data,
+  data = data.frame(),
   theme = theme_light,
   lettermark = NULL,
   lettermarksize = 30,
