@@ -1,6 +1,6 @@
 ---
 title: "The *audiometry* package"
-author: "Bernhard Lehnert, University of Greifswald, Germany"
+author: "Bernhard Lehnert, Dept. Phoniatrics and Pedaudiology, ENT clinic, University of Greifswald, Germany"
 date: "May 2020"
 output: rmarkdown::html_vignette
 vignette: >
@@ -154,7 +154,7 @@ gg_pta(data.frame(0)) +
 
 ### Finally
 
-The package name *audiometry* is obviously much wider then just pure tone audiogram forms.  I intend to broaden the package's functionality *slowly* over time. As of now the *audiometry* packages has support for the Freiburger Sprachtest which is a widely used speech audiometry test in German speaking countries.
+The package name *audiometry* is obviously much wider then just pure tone audiogram forms.  I intend to broaden the package's functionality *slowly* over time. As of now the *audiometry* packages has support for the Freiburger Sprachtest which is a widely used speech audiometry test in German speaking countries. The package comes with an extra vignette for that.
 
 
 

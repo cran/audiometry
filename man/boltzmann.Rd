@@ -19,16 +19,18 @@ Sprachtest, HNO 2016, 64:540-48).}
 predicted intelligibility
 }
 \description{
-s-shaped curve , used as discrimination function to draw the "normal" curves
-in the Freiburger Sprachtest.
-Given as
+s-shaped curve , originally used as discrimination function to draw
+the "normal" curves in the Freiburger Sprachtest before I could find
+the official norm values. Could still be usefull for someone seeking
+to add something like that to her plots be it as example or for simulation.
+The function is given as
 y = (exp(-4*(L-L_50))\*s_50)^-1
-this is similar to a logistic regression
-result but with parameterization usefull here:
+this is similar to a logistic regression result but with parameterization
+that is expecially usefull here:
 }
 \examples{
 # Freiburger Einsilbertest has L_50 = 29.3 dB and s_50 at 5 \%/dB.
-# Compute the expected intelligbility at 20, 30 and 40 dB SPL
+# Compute the expected intelligibility at 20, 30 and 40 dB SPL
 
 boltzmann(L = c(20, 30, 40), L_50 = 29.3, s_50 = .05)
 }

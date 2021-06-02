@@ -4,33 +4,91 @@
 \alias{gg_freiburg}
 \title{Freiburger Sprachtest data with ggplot2}
 \usage{
-gg_freiburg(data = data.frame(), NC_alpha = 0.6, HV_color = "grey")
+gg_freiburg(
+  data = data.frame(),
+  mapping = aes(),
+  horizontal = FALSE,
+  xlab = "Sprachschallpegel [dB]",
+  ylab = "Sprachverstehen [\%]",
+  x_ticks_at = seq(0, 110, 10),
+  y_ticks_at = seq(0, 100, 20),
+  plot_reference = TRUE,
+  plot_reference_lwd_1 = 0.8,
+  plot_reference_lwd_2 = 0.8,
+  plot_reference_color_1 = "darkgrey",
+  plot_reference_color_2 = "darkgrey",
+  plot_discr_loss_scale = TRUE,
+  plot_discr_loss_scale_values = seq(0, 90, 10),
+  plot_discr_loss_scale_color = "darkgrey",
+  NC_alpha = NULL,
+  HV_color = NULL
+)
 }
 \arguments{
 \item{data}{a data.frame that is given to ggplot for initialization}
 
-\item{NC_alpha}{value between 0 and 1 defining how prominent the "normal" curves are.}
+\item{mapping}{same as mapping in ggplot2::ggplot}
 
-\item{HV_color}{color of the Hörverlust-Scale in the
-middle of the diagram.}
+\item{horizontal}{logical whether to orient the plot horizontally}
+
+\item{xlab}{label on the x axis}
+
+\item{ylab}{label on the y axis}
+
+\item{x_ticks_at}{vector of x values where numbers on x axis should appear. This
+is seq(0, 110, 10) in the DIN but c(0, seq(5, 120, 15)) in Muster 13.}
+
+\item{y_ticks_at}{corresponding to x_ticks_at for the y axis. Set to seq(0,100,10)
+to mimick the DIN, seq(0, 100, 20) to mimick Muster 13.}
+
+\item{plot_reference}{logical whether to plot the normal hearing curves for numbers and
+syllables}
+
+\item{plot_reference_lwd_1}{line width for reference line 1}
+
+\item{plot_reference_lwd_2}{line width for reference line 2}
+
+\item{plot_reference_color_1}{line color for reference line 1}
+
+\item{plot_reference_color_2}{line color for reference line 2}
+
+\item{plot_discr_loss_scale}{logical whether to print discrimination loss values in the middle of the plot (likely to change in later versions)}
+
+\item{plot_discr_loss_scale_values}{numeric vector of discrimination loss values (likely to change in later versions)}
+
+\item{plot_discr_loss_scale_color}{color value of discrimination loss values (likely to change in later versions)}
+
+\item{NC_alpha}{deprecated parameter that was used only in version 0.2.0}
+
+\item{HV_color}{deprecated parameter that was used only in version 0.2.0}
 }
 \value{
 a ggplot suitable for adding Freiburger Sprachtest data as geom_*
 }
 \description{
-Probably the most influential speech intelligibility test in German speaking countries.
-This function serves as a starting point for plotting data in way that reflects the
-usual representation of Freiburger Sprachtest results.
+Draws the most influential speech intelligibility test in German
+speaking countries.
+This function serves as a starting point for plotting data in way that
+reflects the usual representation of Freiburger Sprachtest results.
 }
 \examples{
 library(ggplot2)
+data.frame(loud = c(20, 35, 50, 65), perc = c(0,10,65,100)) |>
+gg_freiburg(aes(x = loud, y = perc)) +
+  geom_point() +
+    geom_line()
+
+
 id = gl(25,4)
 gender=gl(2,25, label =c("Frauen", "M\u00e4nner"))
 x = rep(c(35, 50, 65, 80), 25)
 y = 100*boltzmann(jitter(x,3), 45, .03)
 example <- data.frame(Patient=id, Geschlecht = gender, x=x, y=y)
-p <- gg_freiburg(NC_alpha = 1, HV_color = "grey") +
+p <- gg_freiburg() +
         geom_boxplot(aes(x = x, y = y, group = x), example) +
         geom_line(aes(x = x, y = y, color = Geschlecht, group = id), example)
 print(p)
+
+gg_freiburg(plot_reference_lwd_1 = 2.5, plot_reference_lwd_2 = 3,
+           plot_reference_color_1 = "green", plot_reference_color_2 = "pink")
 }
